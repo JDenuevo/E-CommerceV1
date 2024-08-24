@@ -7,10 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $age = $_POST['age'];
     $email = $_POST['email'];
-    $contact = $_POST['contact'];
 
     // SQL query to update data
-    $sql = "UPDATE students SET name = ?, age = ?, email = ?, contact = ? WHERE id = ?";
+    $sql = "UPDATE users SET user_name = ?, age = ?, email = ?, contact = ? WHERE user_id = ?";
     $stmt = $conn->prepare($sql);
 
     if ($stmt) {
@@ -28,6 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-header('Location: ../index'); // Redirect after updating
+header('Location: ../index.php'); // Redirect after updating
 exit();
 ?>

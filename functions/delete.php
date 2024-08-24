@@ -1,8 +1,8 @@
 <?php
 include '../dbconn.php'; // Adjust path as needed
 
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']); // Sanitize input
+if (isset($_POST['id'])) { // Changed from $_GET to $_POST
+    $id = intval($_POST['id']); // Sanitize input
 
     // SQL query to delete data
     $sql = "DELETE FROM students WHERE id = ?";
@@ -23,6 +23,6 @@ if (isset($_GET['id'])) {
     }
 }
 
-header('Location: ../index'); // Redirect after deleting
+header('Location: ../index.php'); // Redirect after deleting
 exit();
 ?>
